@@ -19,3 +19,9 @@ body {
   max-width: 748px;
   width: 100%;
 }
+
+@media (max-width: 748px) {
+  .content-container {
+    padding: 20px;
+  }
+}
