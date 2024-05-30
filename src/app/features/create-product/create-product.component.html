@@ -1,15 +1,20 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-container">
-  <div class="form-content-container">
-    <mat-form-field>
-      <mat-label>Input</mat-label>
-      <input
-        type="text"
-        matInput
-        formControlName="title"
-        placeholder="Título"
-      />
-    </mat-form-field>
-
-    <button type="submit" mat-raised-button color="accent">Salvar</button>
+<section>
+  <div class="title-container">
+    <h1>Cadastre o Produto:</h1>
   </div>
-</form>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-container">
+    <div class="form-content-container">
+      <mat-form-field>
+        <mat-label>Nome do Produto:</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="title"
+          placeholder="Digite o nome do produto"
+        />
+      </mat-form-field>
+  
+      <button type="submit" mat-raised-button color="accent" [disabled]="form.invalid">Salvar</button>
+    </div>
+  </form>
+</section>

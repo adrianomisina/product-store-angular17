@@ -3,7 +3,9 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import {ProdutcsService} from '../../shared/services/produtcs.service'
+import {ProdutcsService} from '../../shared/services/produtcs.service';
+import { MatSnackBar } from '@angular/material/snack-bar'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-product',
@@ -21,6 +23,8 @@ import {ProdutcsService} from '../../shared/services/produtcs.service'
 export class CreateProductComponent {
 
   productsService = inject(ProdutcsService);
+  matSnackBar = inject(MatSnackBar);
+  router = inject(Router);
 
 
   form = new FormGroup({
@@ -31,12 +35,20 @@ export class CreateProductComponent {
   })
 
   onSubmit() {
-    this.productsService.post({
-      title:this.form.controls.title.value 
-
-    }).subscribe(() => {
-      alert('Product created successfully');
-    })
-    this.form.reset()
+    if(this.form.valid) {
+      this.productsService.post({
+        title:this.form.controls.title.value 
+  
+      }).subscribe(() => {
+        this.matSnackBar.open('Produto Criado com sucesso!', 'Ok', {
+          duration: 3000,
+          horizontalPosition: 'right',
+          verticalPosition: 'top'
+        })
+        
+        this.router.navigate(['/'])
+      })
+    }
+  this.form.reset()
   }
 }
