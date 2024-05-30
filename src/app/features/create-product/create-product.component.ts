@@ -3,7 +3,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import {ProdutcsService} from '../../shared/services/produtcs.service';
+import { ProductsService }  from '../../shared/services/produtcs.service';
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { Router } from '@angular/router';
 
@@ -22,7 +22,7 @@ import { Router } from '@angular/router';
 
 export class CreateProductComponent {
 
-  productsService = inject(ProdutcsService);
+  productsService = inject(ProductsService);
   matSnackBar = inject(MatSnackBar);
   router = inject(Router);
 

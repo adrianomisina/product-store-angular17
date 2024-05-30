@@ -6,15 +6,22 @@ import { ProductPayload } from '../interfaces/payload-product.interface';
 @Injectable({
   providedIn: 'root'
 })
-export class ProdutcsService {
-  httpClient = inject(HttpClient)
+export class ProductsService {
+  httpClient = inject(HttpClient);
 
   getAll() {
-    return this.httpClient.get<Product[]>('http://localhost:3000/products')
+    return this.httpClient.get<Product[]>('http://localhost:3000/products');
+  }
+
+  get(id: string) {
+    return this.httpClient.get<Product>(`http://localhost:3000/products/${id}`);
   }
 
   post(payload: ProductPayload) {
-    return this.httpClient.post<Product[]>('http://localhost:3000/products', payload)
+    return this.httpClient.post<Product>('http://localhost:3000/products', payload);
   }
 
+  put(id: string, payload: ProductPayload) {
+    return this.httpClient.put<Product>(`http://localhost:3000/products/${id}`, payload);
+  }
 }

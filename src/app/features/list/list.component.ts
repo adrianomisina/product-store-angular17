@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ProdutcsService } from '../../shared/services/produtcs.service';
+import { ProductsService } from '../../shared/services/produtcs.service';
 import { Product } from '../../shared/interfaces/product.interface';
 import { CardComponent } from './components/card/card.component';
 import { Router, RouterLink } from '@angular/router';
@@ -10,11 +10,11 @@ import { MatButtonModule } from '@angular/material/button';
   standalone: true,
   imports: [CardComponent, RouterLink, MatButtonModule],
   templateUrl: './list.component.html',
-  styleUrl: './list.component.scss',
+  styleUrls: ['./list.component.scss'],
 })
 export class ListComponent {
   products: Product[] = [];
-  productsService = inject(ProdutcsService);
+  productsService = inject(ProductsService);
   router = inject(Router);
 
   ngOnInit() {
@@ -23,7 +23,7 @@ export class ListComponent {
     });
   }
 
-  onEdit() {
-    this.router.navigateByUrl('/edit-product');
+  onEdit(productId: string) {
+    this.router.navigate(['/edit-product', productId]);
   }
 }
