@@ -1,36 +1,12 @@
 {
   "products": [
     {
-      "isTrusted": true,
-      "id": "1"
-    },
-    {
-      "isTrusted": true,
-      "id": "12e6"
-    },
-    {
-      "isTrusted": true,
-      "id": "59cb"
-    },
-    {
-      "id": "7cd8",
-      "title": "cuica"
-    },
-    {
-      "id": "5e85",
-      "title": "Repique de mão"
-    },
-    {
       "id": "55c6",
       "title": "Reco-Reco"
     },
     {
       "title": "Tam-Tam",
       "id": "b01c"
-    },
-    {
-      "title": "Criando novo ",
-      "id": "af29"
     }
   ]
 }
