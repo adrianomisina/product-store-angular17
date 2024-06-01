@@ -1,12 +1,16 @@
 {
   "products": [
     {
-      "id": "55c6",
-      "title": "Reco-Reco"
+      "id": "c13c",
+      "title": "mouse"
     },
     {
-      "title": "Tam-Tam",
-      "id": "b01c"
+      "id": "fb60",
+      "title": "notrbook"
+    },
+    {
+      "id": "64c7",
+      "title": "teclado"
     }
   ]
 }
